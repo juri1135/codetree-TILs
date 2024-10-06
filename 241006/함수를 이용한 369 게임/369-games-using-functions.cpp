@@ -1,26 +1,31 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int func(int x, int y){
-    int ans=0;
-    for(int i=x; i<=y; i++){
-        if(i%3==0){ans++; }
-        else{
-            if(i/1000000==3 || i/1000000==6 || i/1000000==9) {ans++; }
-            else if(i/100000==3 || i/100000==6 || i/100000==9) {ans++; }
-            else if(i/10000==3 || i/10000==6 || i/10000==9) {ans++; }
-            else if(i/1000==3 || i/1000==6 || i/1000==9) {ans++; }
-            else if(i/100==3 || i/100==6 || i/100==9) {ans++; }
-            else if(i/10==3 || i/10==6 || i/10==9) {ans++; }
-            else if(i%10==3 || i%10==6 || i%10==9) {ans++; }
+bool check369(int num) {
+    if (num % 3 == 0) return true;  // 3의 배수인 경우
+    string str = to_string(num);     // 숫자를 문자열로 변환
+    for (char c : str) {
+        if (c == '3' || c == '6' || c == '9') {
+            return true;             // 3, 6, 9가 포함된 경우
+        }
+    }
+    return false;
+}
+
+int func(int x, int y) {
+    int ans = 0;
+    for (int i = x; i <= y; i++) {
+        if (check369(i)) {
+            ans++;
         }
     }
     return ans;
 }
 
 int main() {
-   int a,b;
-   cin>>a>>b;
-   cout<<func(a,b);
+    int a, b;
+    cin >> a >> b;
+    cout << func(a, b);
     return 0;
 }
