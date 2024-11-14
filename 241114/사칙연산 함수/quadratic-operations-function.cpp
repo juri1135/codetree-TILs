@@ -18,6 +18,7 @@ int main() {
         case '*':
         cout<<a<<" "<<o<<" "<<c<<" = "<<a*c;
         break;
+        default:
         cout<<"False";
 
     }
