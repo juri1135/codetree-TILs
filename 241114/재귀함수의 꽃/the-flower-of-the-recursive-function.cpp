@@ -8,9 +8,7 @@ void print_sequence(int n) {
     }
     cout << n << " ";
     print_sequence(n - 1);
-    if (n != 1) {
-        cout << n << " ";
-    }
+    cout << n << " ";
 }
 
 int main() {
