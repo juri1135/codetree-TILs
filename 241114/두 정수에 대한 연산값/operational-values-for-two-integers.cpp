@@ -4,11 +4,11 @@ using namespace std;
 
 void modify_values(int &a, int &b) {
     if (a > b) {
-        a = a * 2;
-        b = b + 25;
+        a += 25;
+        b *= 2;
     } else {
-        b = b * 2;
-        a = a + 25;
+        b += 25;
+        a *= 2;
     }
 }
 
